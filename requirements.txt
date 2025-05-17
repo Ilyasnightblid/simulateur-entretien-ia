@@ -1,6 +1,7 @@
 streamlit
 google-generativeai
 python-dotenv
-SpeechRecognition==3.8.1  # Ou une autre version stable
-PyAudio==0.2.11          # Ou une autre version stable
+SpeechRecognition
+PyAudio
 gTTS
+# pyttsx3  # Si vous l'aviez ajouté aussi, mais il n'est pas nécessaire si vous utilisez gTTS
