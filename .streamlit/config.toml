@@ -1,0 +1,15 @@
+# .streamlit/config.toml
+
+[theme]
+# Définissez votre couleur primaire. Streamlit l'adaptera pour le mode sombre.
+primaryColor="#007bff"  # Exemple : un bleu. Remplacez par votre choix.
+
+# Il est souvent préférable de COMMENTER ou SUPPRIMER les lignes suivantes
+# pour permettre à Streamlit de gérer correctement le mode clair/sombre
+# pour le fond et le texte de base.
+# backgroundColor="#f0f4f8"
+# secondaryBackgroundColor="#e1e8f0"
+# textColor="#31333F"
+
+# Vous pouvez toujours définir la police.
+font="sans serif"

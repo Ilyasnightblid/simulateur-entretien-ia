@@ -1,0 +1,18 @@
+# Fichiers d'environnement virtuel
+venv/
+.venv/
+# Fichiers de configuration de l'environnement virtuel
+env/
+.env # TRÈS IMPORTANT pour ne pas commiter votre clé API locale
+
+# Fichiers Python compilés et caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Fichiers IDE / OS
+.vscode/
+.idea/
+.DS_Store
+*.swp

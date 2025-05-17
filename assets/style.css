@@ -1,0 +1,146 @@
+/* assets/style.css */
+
+/* --- Styles Globaux --- */
+body {
+  /* La police est mieux gérée via config.toml ou l'import direct dans app.py */
+}
+
+/* --- Styles pour les Boutons Streamlit --- */
+div[data-testid="stButton"] > button {
+  border-radius: 12px !important;
+  padding: 10px 20px !important;
+  font-weight: bold !important;
+  border: 1px solid var(--primary-color) !important;
+  background-color: var(--background-color) !important; /* S'adapte au fond du thème */
+  color: var(--primary-color) !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+div[data-testid="stButton"] > button:hover {
+  background-color: var(--primary-color) !important;
+  color: var(--background-color) !important; /* Ou une couleur de texte fixe comme white si primaryColor est toujours foncé */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15) !important;
+}
+
+div[data-testid="stButton"] > button[kind="primary"] {
+  background-color: var(--primary-color) !important;
+  color: white !important; /* Le texte des boutons primaires est souvent blanc */
+  border: 1px solid var(--primary-color) !important;
+}
+div[data-testid="stButton"] > button[kind="primary"]:hover {
+  background-color: var(--background-color) !important;
+  color: var(--primary-color) !important;
+  border: 1px solid var(--primary-color) !important;
+}
+
+/* --- Styles pour les Titres Principaux (st.title) --- */
+h1 {
+  font-size: 2.5em !important;
+  font-weight: bold !important;
+  color: var(--primary-color) !important; /* Utilise la couleur primaire pour le titre */
+  text-align: center;
+  margin-bottom: 1em !important;
+}
+
+/* --- Styles pour les Sous-Titres (st.subheader) --- */
+h2 { /* Streamlit génère des h2 pour st.subheader */
+  font-size: 1.8em !important;
+  color: var(--text-color) !important; /* Utilise la variable de texte principale de Streamlit */
+  opacity: 0.85; /* Légèrement moins fort que le texte normal si besoin */
+  padding-bottom: 0.2em !important;
+  margin-top: 1.5em !important;
+  margin-bottom: 0.8em !important;
+}
+
+/* --- Styles pour les Conteneurs avec bordure (st.container(border=True)) --- */
+div[data-testid="stVerticalBlockBorderWrapper"] {
+  background-color: var(--secondary-background-color) !important; /* S'adapte au fond secondaire */
+  border-radius: 12px !important;
+  padding: 20px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid var(--border-color, #E0E0E0) !important; /* Ajout d'une variable --border-color si elle existe, sinon fallback */
+}
+
+/* --- Styles pour les Expanders (st.expander) --- */
+div[data-testid="stExpander"] details {
+  border: 1px solid var(--border-color, #E0E0E0);
+  border-radius: 10px;
+  background-color: var(--secondary-background-color); /* Fond de l'expander */
+  margin-bottom: 1rem;
+}
+
+div[data-testid="stExpander"] summary {
+  font-weight: 600;
+  font-size: 1.1em;
+  color: var(--text-color); /* Texte du titre de l'expander */
+  opacity: 0.9;
+  padding: 12px 15px !important;
+  /* background-color: transparent; Laisse le fond de details visible */
+  border-bottom: 1px solid var(--border-color, #E0E0E0); /* Séparateur si l'expander est ouvert */
+  border-radius: 10px 10px 0 0;
+}
+div[data-testid="stExpander"] summary:hover {
+  /* background-color: rgba(0,0,0,0.03); /* Un léger overlay au survol */
+  /* Streamlit gère déjà un léger changement de fond au survol en mode sombre/clair */
+}
+
+div[data-testid="stExpander"] [data-testid="stVerticalBlock"] {
+  padding: 15px;
+  background-color: var(--background-color); /* Fond du contenu de l'expander */
+}
+
+/* --- Style pour les messages (st.info, st.warning) --- */
+/* Les couleurs de fond et de bordure pour info/warning peuvent être spécifiques
+ mais la couleur du texte devrait s'adapter ou être choisie pour un bon contraste sur ces fonds. */
+
+div[data-testid="stInfo"] {
+  background-color: #e6f7ff !important; /* Garder un fond clair spécifique */
+  border-left: 5px solid #1890ff !important;
+  border-radius: 8px !important;
+  padding: 15px !important;
+  color: #004085 !important; /* Texte foncé qui contraste bien sur fond clair */
+}
+div[data-testid="stInfo"] path {
+  fill: #1890ff !important;
+}
+
+div[data-testid="stWarning"] {
+  background-color: #fffbe6 !important; /* Garder un fond clair spécifique */
+  border-left: 5px solid #faad14 !important;
+  border-radius: 8px !important;
+  padding: 15px !important;
+  color: #856404 !important; /* Texte foncé qui contraste bien sur fond clair */
+}
+div[data-testid="stWarning"] path {
+  fill: #faad14 !important;
+}
+
+/* --- Styles pour la Barre Latérale (Sidebar) --- */
+section[data-testid="stSidebar"] > div:first-child {
+  background-color: var(--secondary-background-color) !important; /* S'adapte */
+  /* border-right: 1px solid var(--border-color, #dee2e6); */ /* Optionnel */
+}
+
+section[data-testid="stSidebar"] h1,
+section[data-testid="stSidebar"] h2,
+section[data-testid="stSidebar"] h3,
+section[data-testid="stSidebar"] label { /* Cible aussi les labels des selectbox/widgets */
+  color: var(--text-color) !important; /* Texte de la sidebar s'adapte */
+  opacity: 0.9;
+}
+
+/* Spécifiquement pour le texte à l'intérieur des st.selectbox remplis */
+/* Streamlit a des styles internes complexes, mais on peut essayer d'influencer */
+section[data-testid="stSidebar"] div[data-testid="stSelectbox"] div[data-baseweb="select"] > div {
+  color: var(--text-color) !important; /* Pour le texte de l'option sélectionnée */
+  background-color: var(--background-color) !important; /* Pour le fond du selectbox lui-même */
+}
+/* Pour les options dans le dropdown */
+/* Ceci est plus difficile à styler car c'est souvent un portail/overlay */
+
+
+/* Assurer que le markdown de base dans la page principale utilise la bonne couleur de texte */
+.main .block-container p, 
+.main .block-container li {
+  color: var(--text-color) !important;
+}
