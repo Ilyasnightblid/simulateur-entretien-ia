@@ -1,13 +1,17 @@
-# Simulateur d'entretien technique avec feedback IA
+# Simulateur d'entretien technique
 
-Ce projet est un simulateur d'entretien technique alimenté par l'intelligence artificielle, développé en Python et utilisant Streamlit pour l'interface utilisateur. Il permet aux utilisateurs de s'entraîner à des entretiens techniques et d'obtenir un feedback instantané généré par l'IA.
+Ce projet est un simulateur d'entretien technique développé en Python avec Streamlit pour l'interface utilisateur.
 
 ## Fonctionnalités
 
 - Simulation d'entretien technique avec questions variées
-- Analyse des réponses et feedback personnalisé par l'IA
+- Analyse des réponses et feedback personnalisé
 - Interface utilisateur intuitive grâce à Streamlit
 - Statistiques et conseils pour s'améliorer
+
+## Voir le projet en ligne
+
+➡️ [Accéder à la version en ligne](https://mon-super-simulateur.streamlit.app/)
 
 ## Prérequis
 
