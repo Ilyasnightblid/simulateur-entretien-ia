@@ -3,7 +3,7 @@ venv/
 .venv/
 # Fichiers de configuration de l'environnement virtuel
 env/
-.env # TRÈS IMPORTANT pour ne pas commiter votre clé API locale
+.env 
 
 # Fichiers Python compilés et caches
 __pycache__/
